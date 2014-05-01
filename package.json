@@ -1,6 +1,6 @@
 {
   "name": "viewbook-js-core-lib",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Viewbook Core Library Modules",
   "main": "index.js",
   "scripts": {

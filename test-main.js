@@ -20,8 +20,7 @@ require.config({
   deps: allTestFiles,
 
   paths: {
-    lib: '../src',
-    channel: '../vendor/JsChannels/channel'
+    lib: '../src'
   },
 
   // we have to kickoff jasmine, as it is asynchronous
