@@ -1,4 +1,4 @@
-define(['lib/emitter', 'point'], function (Emitter, Point) {
+define(['lib/emitter', 'lib/point'], function (Emitter, Point) {
   var emitter = Emitter.create();
 
   $(document).ready(function () {
