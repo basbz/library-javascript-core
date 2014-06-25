@@ -1,4 +1,4 @@
-define(['lib/emitter', 'lib/point'], function (Emitter, Point) {
+define(['vb-core/emitter', 'vb-core/point'], function (Emitter, Point) {
 
   var emitter = Emitter.create();
 

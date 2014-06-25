@@ -1,4 +1,4 @@
-define(['lib/nodash'], function (__) {
+define(['vb-core/nodash'], function (__) {
   function StateMachine (states, context, eventEmitter) {
     this._states = states;
     this._eventEmitter = {fire: function () {}};

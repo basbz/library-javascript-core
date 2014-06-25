@@ -49,6 +49,14 @@ define(function () {
     return undefined;
   };
 
+  function first (arr) {
+    return slice.call(arr, 0, 1)[0];
+  }
+
+  function last (arr) {
+    return slice.call(arr, arr.length - 1)[0];
+  }
+
   //https://github.com/fitzgen/wu.js/blob/master/lib/wu.js
   function compose (/* variadic number of functions */) {
     var fns = slice.call(arguments), numFns = fns.length;
@@ -93,11 +101,26 @@ define(function () {
 
     slice: slice,
 
+    last: last,
+
+    first: first,
+
+    cid: (function (__c) {
+      return function (prefix) {
+
+        prefix = prefix || 'c-';
+
+        return prefix + (__c += 1);
+      };
+    }(0)),
+
     rest: function (array, n) {
       return slice.call(array, n || 1);
     },
 
-    pipe: compose,
+    pipe: function () {
+      return compose.apply(null, slice.call(arguments).reverse());
+    },
 
     extend: extend,
 

@@ -1,4 +1,4 @@
-define(['lib/nodash'], function (__) {
+define(['vb-core/nodash'], function (__) {
   var _c = 0;
 
   function Emitter () {

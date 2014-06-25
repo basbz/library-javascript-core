@@ -1,4 +1,4 @@
-define(['lib/nodash', 'lib/emitter'], function (__, Emitter) {
+define(['vb-core/nodash', 'vb-core/emitter'], function (__, Emitter) {
   function EventEmitter () {
     this.events = {};
   }

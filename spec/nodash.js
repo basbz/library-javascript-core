@@ -1,8 +1,10 @@
 define(['nodash'], function (__) {
   describe("Nodash provides a subset of Underscore/Lodash type of functiontionality", function () {
     it("can compose/pipe functions", function () {
+      /* pipe executes in reading order, compose in reverse */
+
       var spies = [jasmine.createSpy('one'), jasmine.createSpy('zero')],
-          foo = __.pipe(spies[1], spies[0]);
+          foo = __.pipe(spies[0], spies[1]);
 
       foo('bar');
       expect(spies[0]).toHaveBeenCalledWith('bar');
@@ -17,7 +19,7 @@ define(['nodash'], function (__) {
 
       it("can restrict properties to those named in an array", function () {
         var result = __.pick({a: 1, b: 2, c: 3}, ['b', 'c']);
-        expect(result).toEqual({b: 2, c: 3}); 
+        expect(result).toEqual({b: 2, c: 3});
       });
 
 
@@ -35,6 +37,28 @@ define(['nodash'], function (__) {
         (function () {
           expect(__.rest(arguments)).toEqual([2, 3]);
         }(1, 2, 3));
+      });
+    });
+
+    describe(".first", function () {
+      it("can return the array's first element | undefined", function () {
+        expect(__.first([1, 2, 3])).toBe(1);
+        expect(__.first([])).toBe(undefined);
+      });
+    });
+
+    describe(".last", function () {
+      it("can return the array's last element | undefined", function () {
+        expect(__.last([1, 2, 3])).toBe(3);
+        expect(__.last([])).toBe(undefined);
+      });
+    });
+
+    describe(".cid", function () {
+      it("can generate a basic 'unique' id", function () {
+        expect(__.cid()).not.toEqual(__.cid());
+        expect(__.cid()).not.toEqual(__.cid());
+        expect(__.cid()).not.toEqual(__.cid());
       });
     });
   });

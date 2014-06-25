@@ -1,6 +1,6 @@
 {
   "name": "Viewbook JavaScript Core Library",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "homepage": "https://github.com/viewbook/library-javascript-core",
   "authors": [
     "Bas Ben Zineb <bas@viewbook.com>"
@@ -16,15 +16,13 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "es6-promise": "0.1.1"
+    "es6-promise": "0.1.1",
+    "jquery": "~2.1.0"
   },
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
     "spec"
-  ],
-  "devDependencies": {
-    "jquery": "~2.1.0"
-  }
+  ]
 }

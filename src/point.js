@@ -1,4 +1,4 @@
-define(['lib/nodash'], function (__) {
+define(['vb-core/nodash'], function (__) {
   function Point (x, y) {
     this.x = x;
     this.y = y;

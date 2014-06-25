@@ -20,7 +20,7 @@ require.config({
   deps: allTestFiles,
 
   paths: {
-    lib: '../src'
+    'vb-core': '../src'
   },
 
   // we have to kickoff jasmine, as it is asynchronous
