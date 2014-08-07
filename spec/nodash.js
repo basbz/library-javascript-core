@@ -11,8 +11,8 @@ define(['nodash'], function (__) {
       expect(spies[1]).toHaveBeenCalled();
     });
 
-    describe("Nodash can cherry pick an objects properties", function () {
-      it("can", function () {
+    describe(".pick ", function () {
+      it("can cherry pick an objects properties", function () {
         var result = __.pick({a: 1, b: 2, c: 3}, 'a', 'c');
         expect(result).toEqual({a: 1, c: 3});
       });
@@ -27,6 +27,27 @@ define(['nodash'], function (__) {
         var Obj = function(){};
         Obj.prototype = {a: 1, b: 2, c: 3};
         expect(__.pick(new Obj(), 'a', 'c')).toEqual({a: 1, c: 3});
+      });
+    });
+
+    describe(".where", function () {
+      it("returns true if the test and object properties are equal", function () {
+        var where = __.where({son: 'Vivek'});
+
+        expect(where({})).toBe(false);
+        expect(where({son: "Vik"})).toBe(false);
+        expect(where({son: "Vivek"})).toBe(true);
+      });
+
+      it("can be used as a list comparator", function () {
+        var cities = [
+          {name: 'Amsterdam'},
+          {name: 'Den Haag'},
+          {name: 'Rotterdam'},
+          { name: 'Utrecht'}
+        ];
+
+        expect(cities.find(__.where({name: 'Rotterdam'}))).toEqual({name: 'Rotterdam'});
       });
     });
 

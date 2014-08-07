@@ -94,6 +94,24 @@ define(function () {
     return copy;
   }
 
+  function where (test) {
+    var key, keys = Object.keys(test), len = keys.length;
+
+    return function (obj) {
+      if(obj === test)
+        return true;
+
+      for(var i = 0; i < len; i++) {
+        key = keys[i];
+
+        if(obj[key] !== test[key])
+          return false;
+
+        return true;
+      }
+    };
+  }
+
   return {
     isFunction: isFunction,
 
@@ -124,6 +142,8 @@ define(function () {
 
     extend: extend,
 
-    pick: pick
+    pick: pick,
+
+    where: where
   };
 });
