@@ -140,6 +140,8 @@ define(function () {
       return compose.apply(null, slice.call(arguments).reverse());
     },
 
+    compose: compose,
+
     extend: extend,
 
     pick: pick,
