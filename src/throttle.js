@@ -11,7 +11,7 @@ define(['vb-core/nodash'], function (__) {
       if(state)
         return;
 
-      var args = __.slice.call(args);
+      var args = __.slice.call(arguments);
 
       state = 1;
       requestAnimationFrame(function () {
