@@ -12,7 +12,7 @@ define(['vb-core/nodash'], function (__) {
     },
 
     fire: function (callbacks, args) {
-      callbacks.forEach(function (spec) {
+      (callbacks || []).slice().forEach(function (spec) {
         spec.fn.apply(spec.context, args);
       });
     },
